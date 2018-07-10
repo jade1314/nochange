@@ -1,0 +1,28 @@
+<!--component/Dialog/Dialog.wxml-->
+<view class='wx_dialog_container' hidden="{{!isShow}}">
+    <view class='wx-mask'></view>
+    <view class='wx-dialog'>
+        <view class='wx-dialog-title'>{{ title }}</view>
+        <view class='wx-dialog-content'>{{ content }}</view>
+        <view class='selectpostaddress'catchtap='_firstEvent'>
+          <view class='shortcut'>{{firsttitle}}</view>
+          <view class='addressdetail'>{{firstdetail}}</view>
+          <view class='rightarrow'>
+            <image src='../../assets/1529661267812.png' mode='scaleToFill' style='width:20rpx;height:40rpx;'></image>
+          </view>
+        </view>
+        <view style="height:1px;background: #eee;width:100%;"></view>
+        <view class='selectpostaddress' catchtap='_secondEvent'>
+          <view class='shortcut'>{{secondtitle}}</view>
+          <view class='addressdetail'>{{seconddetail}}</view>
+          <view class='rightarrow'>
+            <image src='../../assets/1529661267812.png' mode='scaleToFill' style='width:20rpx;height:40rpx;'></image>
+          </view>
+        </view>
+        <view class='wx-dialog-footer'>
+          <view hidden='{{cancelText?false:true}}' class='wx-dialog-btn' catchtap='_cancelEvent'>{{ cancelText }}</view>
+           <view hidden='{{confirmText?false:true}}'  class='wx-dialog-btn' catchtap='_confirmEvent'>{{ confirmText }}</view> 
+          
+        </view>
+    </view>
+</view>

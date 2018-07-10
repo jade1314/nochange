@@ -1,0 +1,58 @@
+
+<view class="weui-cell weui-cell_access">
+  <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+  <view class="weui-cell__bd">{{ userInfo.nickName }}</view>
+  <view class="weui-cell__ft">积分：{{score}}</view>
+</view>
+
+<view style="height:20rpx;background: #eee;width:100%;"></view>
+
+<navigator url="/pages/order-list/index?type=1" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+  <view class="weui-cell__bd">配送订单</view>
+  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+</navigator>
+
+<view class="weui-cell weui-cell_access" style='display:flex; justify-content: space-around;'>
+  <view bindtap='willpay' data-type='0'>
+    <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="../../assets/images/random/icons8-client_management.png" background-size="cover"></image>
+    <view>待支付</view>
+  </view>
+  <view bindtap='willpay' data-type='2'>
+    <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="../../assets/images/random/icons8-cliff_jumping.png" background-size="cover"></image>
+    <view>待配送</view>
+  </view>
+  <view bindtap='willpay' data-type='4'>
+    <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="../../assets/images/random/icons8-climbing_anchor.png" background-size="cover"></image>
+    <view>已完成</view>
+  </view>
+
+</view>
+
+<navigator url="/pages/select-address/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+  <view class="weui-cell__bd">我的收货地址</view>
+  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+</navigator>
+
+
+
+<navigator url="/pages/mycoupons/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+  <view class="weui-cell__bd">我的优惠券</view>
+  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+</navigator>
+
+<navigator url="/pages//index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+  <view class="weui-cell__bd">团购订单</view>
+  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+</navigator>
+
+
+
+<navigator bindtap="aboutUs" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+  <view class="weui-cell__bd">联系客服</view>
+  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+</navigator>
+
+
+<view class="my-item" style="border:none;padding:0rpx;margin:0rpx;background:none;border:none;height:auto;line-height:auto;">
+  <button style='font-size:30rpx' type="warn" bindtap="relogin">重新授权登录</button>
+</view>
